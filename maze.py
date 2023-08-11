@@ -1,4 +1,3 @@
-
 START_X = 0
 START_Y = 1
 
@@ -42,7 +41,7 @@ def maze_bfs(maze):
     frontier.append((START_X, START_Y, "right"))
     visited = []
     counter = 0
-    # Mientras hay posiciones en el laberinto
+
     while len(frontier) > 0:
         temp_frontier = []
         for node in frontier:
@@ -62,12 +61,17 @@ def maze_bfs(maze):
                         temp_frontier.append((x_position, y_position + 1, "down"))
                     if can_go_up(y_position):
                         temp_frontier.append((x_position, y_position - 1, "up"))
-            
+                else:
+                    if direction == "down":
+                        temp_frontier.append((x_position, y_position + 1, "down"))
+                    if direction == "right":
+                        temp_frontier.append((x_position + 1, y_position, "right"))
+                    if direction == "up":
+                        temp_frontier.append((x_position, y_position - 1, "up"))
+                    if direction == "left":
+                        temp_frontier.append((x_position - 1, y_position, "left"))
         visited.extend(frontier)
         frontier = temp_frontier
         counter += 1
 
     return -1
-
-
-def maze_bfs_recursive(maze, x,y,points,)
