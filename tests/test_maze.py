@@ -1,14 +1,13 @@
 """Module with data to use in tests"""
 from tests.data import maze1, maze2, maze3, maze4
-
+from maze import maze_bfs
 
 class TestClass:
     """Class representing test from maze"""
 
     def test_maze1(self):
         """Testing bfs function with example 1"""
-        print(maze1)
-        assert False
+        assert maze_bfs(maze1) == 11
 
     def test_maze2(self):
         """Testing bfs function with example 2"""
