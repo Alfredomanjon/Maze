@@ -11,15 +11,13 @@ class TestClass:
 
     def test_maze2(self):
         """Testing bfs function with example 2"""
-        print(maze2)
-        assert False
+        assert maze_bfs(maze2) == -1
 
     def test_maze3(self):
         """Testing bfs function with example 3"""
-        print(maze3)
-        assert False
+        assert maze_bfs(maze3) == 2
 
     def test_maze4(self):
         """Testing bfs function with example 4"""
-        print(maze4)
-        assert False
+        assert maze_bfs(maze4) == 16
+        
