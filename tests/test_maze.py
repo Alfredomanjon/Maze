@@ -1,22 +1,32 @@
-"""Module with data to use in tests"""
-from tests.data import maze1, maze2, maze3, maze4
+from tests.data import maze1, maze2, maze3, maze4, maze5, maze6
 from maze import find_shortest_distance
 
 class TestClass:
-    """Class representing test from maze"""
+    """Maze testing"""
 
+    # Acceptance criteria
     def test_maze1(self):
-        """Testing bfs function with example 1"""
+        """Shortest path for maze 1 should return 11"""
         assert find_shortest_distance(maze1) == 11
 
     def test_maze2(self):
-        """Testing bfs function with example 2"""
+        """Shortest path for maze 2 should return -1"""
         assert find_shortest_distance(maze2) == -1
 
     def test_maze3(self):
-        """Testing bfs function with example 3"""
+        """Shortest path for maze 3 should return 2"""
         assert find_shortest_distance(maze3) == 2
 
     def test_maze4(self):
-        """Testing bfs function with example 4"""
+        """Shortest path for maze 4 should return 16"""
         assert find_shortest_distance(maze4) == 16
+
+    # Extra test
+    def test_extra_maze1(self):
+        """Shortest path for maze 5 should return -1"""
+        assert find_shortest_distance(maze5) == -1
+    
+    def test_extra_maze2(self):
+        """Shortest path for maze 6 should return 15"""
+        assert find_shortest_distance(maze6) == 15
+        
