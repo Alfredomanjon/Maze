@@ -6,48 +6,48 @@ def is_free(content):
     return content != "#"
 
 
-def can_go_right(maze, x, y, direction):
+def can_go_right(maze, x_position, y_position, direction):
     if direction == "horizontal":
-        return len(maze[0]) - 1 >= y + 2 and is_free(maze[x][y + 2])
+        return len(maze[0]) - 1 >= y_position + 2 and is_free(maze[x_position][y_position + 2])
     return (
-        len(maze[0]) - 1 >= y + 1
-        and is_free(maze[x][y + 1])
-        and is_free(maze[x - 1][y + 1])
-        and is_free(maze[x + 1][y + 1])
+        len(maze[0]) - 1 >= y_position + 1
+        and is_free(maze[x_position][y_position + 1])
+        and is_free(maze[x_position - 1][y_position + 1])
+        and is_free(maze[x_position + 1][y_position + 1])
     )
 
 
-def can_go_left(maze, x, y, direction):
+def can_go_left(maze, x_position, y_position, direction):
     if direction == "horizontal":
-        return y - 2 >= 0 and is_free(maze[x][y - 2])
+        return y_position - 2 >= 0 and is_free(maze[x_position][y_position - 2])
     return (
-        y - 1 >= 0
-        and is_free(maze[x][y - 1])
-        and is_free(maze[x - 1][y - 1])
-        and is_free(maze[x + 1][y - 1])
+        y_position - 1 >= 0
+        and is_free(maze[x_position][y_position - 1])
+        and is_free(maze[x_position - 1][y_position - 1])
+        and is_free(maze[x_position + 1][y_position - 1])
     )
 
 
-def can_go_down(maze, x, y, direction):
+def can_go_down(maze, x_position, y_position, direction):
     if direction == "horizontal":
         return (
-            len(maze) - 1 > x
-            and is_free(maze[x + 1][y - 1])
-            and is_free(maze[x + 1][y])
-            and is_free(maze[x + 1][y + 1])
+            len(maze) - 1 > x_position
+            and is_free(maze[x_position + 1][y_position - 1])
+            and is_free(maze[x_position + 1][y_position])
+            and is_free(maze[x_position + 1][y_position + 1])
         )
-    return len(maze) - 2 > x and is_free(maze[x + 2][y])
+    return len(maze) - 2 > x_position and is_free(maze[x_position + 2][y_position])
 
 
-def can_go_up(maze, x, y, direction):
+def can_go_up(maze, x_position, y_position, direction):
     if direction == "horizontal":
         return (
-            x - 1 >= 0
-            and is_free(maze[x - 1][y - 1])
-            and is_free(maze[x - 1][y])
-            and is_free(maze[x - 1][y + 1])
+            x_position - 1 >= 0
+            and is_free(maze[x_position - 1][y_position - 1])
+            and is_free(maze[x_position - 1][y_position])
+            and is_free(maze[x_position - 1][y_position + 1])
         )
-    return x - 2 >= 0 and is_free(maze[x - 2][y])
+    return x_position - 2 >= 0 and is_free(maze[x_position - 2][y_position])
 
 
 def can_rotate(maze, x_position, y_position, direction):
