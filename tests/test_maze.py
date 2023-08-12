@@ -1,4 +1,4 @@
-from tests.data import maze1, maze2, maze3, maze4, maze5, maze6
+from tests.data import maze1, maze2, maze3, maze4, maze5, maze6, maze7
 from maze import find_shortest_distance
 
 class TestClass:
@@ -29,4 +29,8 @@ class TestClass:
     def test_extra_maze2(self):
         """Shortest path for maze 6 should return 15"""
         assert find_shortest_distance(maze6) == 15
+
+    def test_extra_maze3(self):
+        """Shortest path for maze 7 should return 16"""
+        assert find_shortest_distance(maze7) == 16
         
